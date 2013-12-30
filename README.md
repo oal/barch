@@ -14,28 +14,30 @@ Then you should be asked to fill in your Seafile server address, library etc.
 
 You have to create a library, and put a file called "config.json" in its root. The file should look something like this:
 
-   {
-       "mysql": [
-           {
-               "username": "username",
-               "password": "password",
-               "databases": ["one", "or", "more", "databases"]
-           }
-       ],
-       "git": [
-           {
-               "directory": "/home/git/repositories/",
-               "recursive": true
-           }
-       ],
-       "sqlite": [
-           "/home/user/my.db"
-       ],
-       "postgres": [
-           "db1",
-           "db2"
-       ]
-   }
+```json
+{
+   "mysql": [
+       {
+           "username": "username",
+           "password": "password",
+           "databases": ["one", "or", "more", "databases"]
+       }
+   ],
+   "git": [
+       {
+           "directory": "/home/git/repositories/",
+           "recursive": true
+       }
+   ],
+   "sqlite": [
+       "/home/user/my.db"
+   ],
+   "postgres": [
+       "db1",
+       "db2"
+   ]
+}
+```
 
 I use this on two servers, and it works well. Just set it up to run with a cronjob every night (or more often if you want). Also, I put this on Github in a hurry, so let me know if you find any bugs or other issues.
 
