@@ -12,7 +12,7 @@ Barch is a simple backup tool for Seafile.
 
 Then you should be asked to fill in your Seafile server address, library etc.
 
-You have to create a library, and put a file called "config.json" in its root. The file should look something like this:
+In your library, create a file called "config.json" in the library root. The file should look something like this:
 
 ```json
 {
@@ -38,6 +38,13 @@ You have to create a library, and put a file called "config.json" in its root. T
    ]
 }
 ```
+
+Then when you run `python barch.py` on your server, it will read the `config.json` file that was created the first time `barch.py` was run, and connect to the library on your Seafile server. It'll download `config.json` from the library, and from the information you've added to that file, know what it should back up. Backups will be added to `library_root/git/repo.tar.gz`, and similar for the other backup procedures.
+
+To sum things up: There are two `config.json` files. One is created on the server (contains login information to Seafile), and you create one in your library (containing database logins etc).
+
+Feel free to add more backup procedures, or improve upon the existing ones.
+
 
 I use this on two servers, and it works well. Just set it up to run with a cronjob every night (or more often if you want). Also, I put this on Github in a hurry, so let me know if you find any bugs or other issues.
 
