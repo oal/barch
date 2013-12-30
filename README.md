@@ -4,7 +4,7 @@ Barch is a simple backup tool for Seafile.
 
 ### Setup
 
-    virtualenv env
+    virtualenv env -p /usr/bin/python3
     source env/bin/activate
     pip install -r requirements.txt
 
